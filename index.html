@@ -59,7 +59,7 @@
                     <p class="text-sm">Delicie-se com nosso hambúrguer de 180g de carne premium, grelhado na brasa para um sabor defumado inigualável. Acompanhado de queijo cheddar derretido, bacon crocante, alface fresca, tomate e nosso molho especial de barbecue. Uma explosão de sabores que vai conquistar seu paladar!</p>
 
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$ 35,00</p>
+                        <p class="font-bold text-lg">R$ 35.00</p>
                         <button 
                             class="bg-gray-900 px-5 rounded add-to-cart-btn"
                             data-name="Chama Suprema Burger"
@@ -87,7 +87,7 @@
                 <p class="text-sm">Uma combinação perfeita de carne bovina selecionada, grelhada lentamente na brasa para manter suculência e sabor. Com queijo gorgonzola derretido, cebolas caramelizadas, rúcula fresca e nosso molho artesanal de alho. Uma experiência gourmet que vai além das expectativas.</p>
 
                 <div class="flex items-center gap-2 justify-between mt-3">
-                    <p class="font-bold text-lg">R$ 30,00</p>
+                    <p class="font-bold text-lg">R$ 30.00</p>
                     <button 
                         class="bg-gray-900 px-5 rounded add-to-cart-btn"
                         data-name="Brasa Gourmet Burger"
@@ -114,7 +114,7 @@
                 <p class="text-sm">Nosso hambúrguer de costela defumada lentamente, preparado na brasa para um toque defumado irresistível. Servido com queijo prato derretido, cebolas crocantes, picles caseiros e nosso molho de maionese defumada. Para os amantes de churrasco, uma escolha que vai aquecer seu coração.</p>
 
                 <div class="flex items-center gap-2 justify-between mt-3">
-                    <p class="font-bold text-lg">R$ 28,00</p>
+                    <p class="font-bold text-lg">R$ 28.00</p>
                     <button 
                         class="bg-gray-900 px-5 rounded add-to-cart-btn"
                         data-name="Fogo Churrasqueiro Burger"
@@ -141,7 +141,7 @@
                 <p class="text-sm">Para os verdadeiros mestres do churrasco, nosso hambúrguer de picanha grelhado na brasa, garantindo suculência e sabor incomparáveis. Acompanhado de queijo mozzarella derretido, tomate fresco, rúcula e nosso molho especial de ervas finas. Uma obra-prima para os amantes da boa carne.</p>
 
                 <div class="flex items-center gap-2 justify-between mt-3">
-                    <p class="font-bold text-lg">R$ 25,00</p>
+                    <p class="font-bold text-lg">R$ 25.00</p>
                     <button 
                         class="bg-gray-900 px-5 rounded add-to-cart-btn"
                         data-name="Grill Master Burger"
@@ -169,7 +169,7 @@
                 <p class="text-sm">Nosso hambúrguer de cordeiro grelhado na brasa, temperado com especiarias exclusivas para um sabor robusto e autêntico. Com queijo feta cremoso, tomate seco, rúcula fresca e nosso molho de hortelã. Uma combinação única que vai te transportar para uma experiência gastronômica memorável.</p>
 
                 <div class="flex items-center gap-2 justify-between mt-3">
-                    <p class="font-bold text-lg">R$ 29,00</p>
+                    <p class="font-bold text-lg">R$ 29.00</p>
                     <button 
                         class="bg-gray-900 px-5 rounded add-to-cart-btn"
                         data-name="Pit Fire Burger"
@@ -196,7 +196,7 @@
                 <p class="text-sm">Experimente nosso hambúrguer de fraldinha grelhado na brasa, selado para manter os sucos naturais da carne. Servido com queijo provolone derretido, bacon artesanal, cebola crispy e nosso molho de aioli defumado. Uma explosão de texturas e sabores que vai conquistar seu paladar.</p>
 
                 <div class="flex items-center gap-2 justify-between mt-3">
-                    <p class="font-bold text-lg">R$ 32,00</p>
+                    <p class="font-bold text-lg">R$ 32.00</p>
                     <button 
                         class="bg-gray-900 px-5 rounded add-to-cart-btn"
                         data-name="Sear & Sizzle Burger"
@@ -282,7 +282,7 @@
 <!-- FIM DO MENU -->
 
 <!-- MODAL -->
-<div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
+<div class="bg-black/80 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
 
     <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
         <h2 class="text-center font-bold font-2xl md-2">Meu carrinho</h2>
@@ -295,9 +295,9 @@
         <input type="text"
         placeholder="Digite seu endereço completo"
         class="w-full border-2 p-1 rounded my-1"
-        id="adress"
+        id="address"
         />
-        <p class="text-red-500 hidden" id="adress-warm">Digite seu endereço completo!</p>
+        <p class="text-red-500 hidden" id="address-warm">Digite seu endereço completo!</p>
         <div class="flex items-center justify-between mt-5 w-full">
             <button id="close-modal-btn">Fechar</button>
             <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded ">Finalizar pedido</button>
@@ -310,13 +310,17 @@
 
 <!-- BUTTON CART FOOTER -->
 <footer class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
-    <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+
+    <button id="cart-btn" class="flex items-center gap-2 text-white font-bold">
+        Itens do carrinho
         (<span id="cart-count">0</span>)
-        Veja meu carrinho
         <i class="fa fa-cart-plus text-lg text-white"></i>
     </button>
+
 </footer>
 <!-- FIM BUTTON CART FOOTER -->
+
+<script src="scipt.js"></script>
 
 </body>
 </html>
