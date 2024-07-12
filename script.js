@@ -6,7 +6,11 @@ const cartTotal = document.getElementById('cart-total')
 const checkoutBtn = document.getElementById('checkout-btn')
 const closeModalBtn = document.getElementById('close-modal-btn')
 const cartCounter = document.getElementById('cart-count')
-const addressInput = document.getElementById('address')
+const addressInputName = document.getElementById('address-name')
+const addressInputStreet = document.getElementById('address-street')
+const addressInputNumber = document.getElementById('address-number')
+const addressInputLocale = document.getElementById('address-locale')
+const addressInputAdditional = document.getElementById('address-additional')
 const addressWarm = document.getElementById('address-warm')
 
 let cart = []
@@ -127,10 +131,10 @@ function removerItemCart(name) {
     }
 }
 
-addressInput.addEventListener('input', function (event) {
+addressInputName.addEventListener('input', function (event) {
     let inputValue = event.target.value;
     if (inputValue !== "") {
-        addressInput.classList.remove('border-red-500')
+        addressInputName.classList.remove('border-red-500')
         addressWarm.classList.add('hidden')
     }
 
@@ -156,35 +160,45 @@ checkoutBtn.addEventListener('click', function () {
 
     //     return;
     // }
-
     if (cart.length === 0) return;
-        if (addressInput.value === "") {
-            addressWarm.classList.remove('hidden')
-            addressInput.classList.add('border-red-500')
-            return;
-        }
+
+    if (addressInputName.value === "") {
+        addressWarm.classList.remove('hidden');
+        addressInputName.classList.add('border-red-500');
+        return;
+    }
+
+    // CALCULAR TOTAL DO PEDIDO
+    let totalPedido = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
     // ENVIAR PEDIDO PARA WHATSAPP
     const cartItems = cart.map((item) => {
         return (
-            `${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} | `
-        )
-    }).join("")
+            `*${item.name}*\nQuantidade: (${item.quantity}) Preço: R$${item.price.toFixed(2)}\n`
+        );
+    }).join("");
 
-    const message = encodeURIComponent(cartItems)
-    const phone = "21999001012"
+    const valorTotalPedido = `_Valor Total: R$${totalPedido.toFixed(2)}_\n`
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    const dadosCliente = `Nome: ${addressInputName.value}\nRua: ${addressInputStreet.value}, ${addressInputNumber.value}\nComplemento: ${addressInputAdditional.value}\nBairro: ${addressInputLocale.value}`
 
-    cart = []
-    cart.length = 0
-    addressInput.value =""
-    cartModal.style.display = 'none'
+    const message = encodeURIComponent(
+        `*Resumo do Pedido*\n\n${cartItems}\n${valorTotalPedido}\n${dadosCliente}`
+    );
+    const phone = "35999057566";
 
-    updateCartModal()
+    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
-    
-})
+    cart = [];
+    addressInputName.value = "";
+    addressInputStreet.value = "";
+    addressInputNumber.value = "";
+    addressInputAdditional.value = "";
+    addressInputLocale.value = "";
+    cartModal.style.display = 'none';
+
+    updateCartModal();
+});
 
 function checkRestaurantOpen() {
     const data = new Date();
