@@ -281,6 +281,5 @@ Esta função realiza as seguintes verificações e ações:
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
----
 
 Para mais informações ou contribuições, por favor, consulte o repositório do projeto no GitHub.
