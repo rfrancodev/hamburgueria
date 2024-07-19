@@ -18,6 +18,7 @@
 ### 1. Visão Geral do Projeto
 
 O sistema web de cardápio permite que os clientes escolham produtos, visualizem o carrinho de compras, e enviem seus pedidos para o WhatsApp da hamburgueria. Ele é construído utilizando HTML, CSS, JavaScript e Tailwind CSS para o estilo.
+
 ---
 
 <a name="instalacao"></a>
