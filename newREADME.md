@@ -262,7 +262,7 @@ Esta função realiza as seguintes verificações e ações:
 
 
 
-## Contribuindo
+### Contribuindo
 
 1. Fork o repositório.
 2. Crie uma nova branch com sua feature:
