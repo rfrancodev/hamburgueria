@@ -10,14 +10,14 @@
 4. [Detalhamento das Funcionalidades](#detalhamento-das-funcionalidades)
     - [Funções e Métodos](#funcoes-e-metodos)
 5. [Uso do Sistema](#uso-do-sistema)
+6. [Contribuindo](#Contribuindo)
 
 ---
 
 <a name="visao-geral-do-projeto"></a>
 ### 1. Visão Geral do Projeto
 
-Este projeto é um sistema de cardápio interativo para uma hamburgueria. Os clientes podem visualizar o menu, adicionar itens ao carrinho, revisar o pedido e finalizar a compra enviando um resumo do pedido via WhatsApp.
-
+O sistema web de cardápio permite que os clientes escolham produtos, visualizem o carrinho de compras, e enviem seus pedidos para o WhatsApp da hamburgueria. Ele é construído utilizando HTML, CSS, JavaScript e Tailwind CSS para o estilo.
 ---
 
 <a name="instalacao"></a>
@@ -259,6 +259,28 @@ Esta função realiza as seguintes verificações e ações:
 5. **Finalizar Pedido:**
     - Preencha os dados do cliente e clique em "Finalizar Pedido" para enviar o resumo via WhatsApp.
 
+
+
+## Contribuindo
+
+1. Fork o repositório.
+2. Crie uma nova branch com sua feature:
+    ```bash
+    git checkout -b feature/nova-feature
+    ```
+3. Commit suas mudanças:
+    ```bash
+    git commit -m 'Adiciona nova feature'
+    ```
+4. Faça o push para a branch:
+    ```bash
+    git push origin feature/nova-feature
+    ```
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
 ---
 
 Para mais informações ou contribuições, por favor, consulte o repositório do projeto no GitHub.
